@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muslim Nasiha - Islamic Guidance Platform</title>
+    <link rel="stylesheet" href="/muslim-nasiha/css/style.css">
+    <link href="/muslim-nasiha/css/vendor/fontawesome.css" rel="stylesheet">
+    <script src="/muslim-nasiha/js/vendor/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <i class="fas fa-moon"></i>
+                    <span>Muslim Nasiha</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#quran" class="nav-link">Quran</a>
+                    <a href="#hadith" class="nav-link">Hadith</a>
+                    <a href="#prayer" class="nav-link">Prayer Times</a>
+                    <a href="#duas" class="nav-link">Duas</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>{{ heroTitle }}</h1>
+                <p>{{ heroSubtitle }}</p>
+                <div class="app-links">
+                    <a href="#" class="app-link">
+                        <i class="fab fa-android"></i>
+                        <span>Android App</span>
+                    </a>
+                    <a href="#" class="app-link">
+                        <i class="fab fa-apple"></i>
+                        <span>iOS App</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prayer Times Widget -->
+        <section class="prayer-times">
+            <div class="container">
+                <h2>Today's Prayer Times</h2>
+                <div class="prayer-grid">
+                    <div class="prayer-item" v-for="prayer in prayerTimes" :key="prayer.name">
+                        <span class="prayer-name">{{ prayer.name }}</span>
+                        <span class="prayer-time">{{ prayer.time }}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/muslim-nasiha/js/app.js"></script>
+</body>
+</html>
