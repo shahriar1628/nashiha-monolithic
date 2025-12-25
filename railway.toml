@@ -2,6 +2,6 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "./gradlew bootRun"
+startCommand = "java -jar build/libs/*.jar"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
