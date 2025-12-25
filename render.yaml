@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: muslim-nasiha
+    env: docker
+    plan: free
+    buildCommand: ./gradlew clean build -x test
+    startCommand: java -Dserver.port=$PORT -jar build/libs/*.jar
+    envVars:
+      - key: JAVA_TOOL_OPTIONS
+        value: -Xmx512m
